@@ -1,20 +1,20 @@
-# Supplier codes
+# Chinese suppliers: ERP codes
 
-ERP supplier code = column `coorcode` (H) in **XRBUYOR1**. Use it to filter one supplier's purchase history.
+Source: the ERP supplier register **SUPPDET2** (`15laO9SvsZZiEtdkP1ZKbzYT5n_fdm6UiuUQ1JnXkric`, printed 04/05/26), with the list of Chinese supplier codes confirmed by Em on 20/11/26.
+The ERP code is column `coorcode` (H) in **XRBUYOR1**. The short name (ชื่อเล่น) is what XRORDDT3 shows in column `Supplier`.
 
-| Supplier | ERP code (coorcode) | Products | Name suffix in ERP | Container prefix | XRBUYOR1 lines* | Status |
-|---|---|---|---|---|---|---|
-| **CNS** | **ค.022** | Towels, bath mats, bathrobes, bath rugs | `CN` | C (C24, C27…) | 1,385 (im25-151 → im26-593) | ✅ matches the C27 file (e.g. 21500342 in im25-151) |
-| CNS (earlier code?) | จ.006 | Towels | `CN` | – | 330 (im25-001 → im25-241) | ⚠️ **to confirm**: CN towels in 2025 only, so possibly CNS's earlier code |
-| **HU** | **อ.042** | Duvet inserts, pillows, toppers | `HU` | – | 534 | ✅ products end in `HU` |
-| **NT** (Nantong) | **น.008** | White fabric KSN… | – | N (N14…) | 220 | ⚠️ **to confirm** (KSN fabric) |
-| **ZS** (Hebei Xiucheng) | **ฮ.005** | White fabric KSJ… | – | – | 75 | ⚠️ **to confirm** (KSJ fabric) |
-| **FS** | **อ.085** | Pillows, toppers | `FX` | – | 451 | ⚠️ **to confirm**: products end in `FX` |
+| Short name | ERP code | Company (SUPPDET2) | Products | Status |
+|---|---|---|---|---|
+| **CNS** | **ค.022** (`CNS2.`) | CANASIN INTERNATIONAL TEXIILE (JIANGSU) CO., LTD. | Towels, bath mats, bathrobes, bath rugs (`CN`) | ✅ current code, used from im25-151 |
+| CNS | จ.006 (`CNS`) | JIANGSU CANASIN TEXTILE TECHNOLOGY CO., LTD. | Towels (`CN`) | ✅ earlier CNS code (2025 POs im25-001 → im25-241) |
+| **HU** | **อ.042** | ANHUI XIAZHEN DOWN & FEATHER CO., LTD. | Duvet inserts, pillows, toppers (`HU`) | ✅ |
+| **NT** | **น.008** | NANTONG AOMIAN TEXTILE CO., LTD | White fabric (KSN…) | ✅ |
+| **ZS** | **ฮ.005** | HEBEI XIUCHENG HOME TEXTILE CO., LTD. | White fabric (KSJ…) | ✅ |
+| **FX / FS** | **อ.085** (`FX2`) | ANHUI HONREN TEXTILE CO., LTD. | Pillows, toppers (`FX`) | ✅ current code |
+| FX / FS | อ.015 (`FX`) | ANHUI ZHONGQIONHONYU HOME TEXTILE TECHNOLOGY CO.,LTD. | Pillows, toppers | ✅ earlier code. SUPPDET2 marks it **ไม่ใช้** (no longer used) |
+| **AMEY** | **A-001** | JIANGSU AMEY HOSPITALITY CO.,LTD | – | ✅ |
 
-\* Counted in the XRBUYOR1 tab of *CNS 2026 ชน Price AKJ* on 20/11/26 (rows 2–2996).
-
-## How to use
-- Last year's price for one supplier: add `(XRBUYOR1!$H:$H="<code>")` to the FILTER in the W formula if the same Product Code could come from more than one supplier.
-- In the XRORDDT3 file, column `Supplier` shows the short name (e.g. `CNS2.`), not the ERP code.
-
-When Em confirms a ⚠️ row, change its status to ✅.
+## Rules
+- **One supplier can have two codes** (old and new company or account): CNS = ค.022 + จ.006, FX = อ.085 + อ.015. For history and last-year price, **include both codes**, e.g. `(XRBUYOR1!$H:$H="ค.022")+(XRBUYOR1!$H:$H="จ.006")`.
+- In the XRORDDT3 file, column `Supplier` shows the short name (e.g. `CNS2.` = ค.022). Use it to pick the runbook.
+- Not in this list: SUPPDET2 also has **จ.020** "Jiangsu Canasin Textile Technology Co.,Ltd." (a third Canasin record). Em's list doesn't include it, so ask before using it.
