@@ -9,11 +9,16 @@ The goals are to:
 
 ## Suppliers
 
-| Supplier | What we buy | Google Sheet | Claude tab | History | Runbook | Status |
-|---|---|---|---|---|---|---|
-| **CNS** | Towels, bath mats, bathrobes, pillows | CNS 2026 ชน Price AKJ | `Claud input` | `CNS_Old`, `XRBUYOR1` | [suppliers/CNS/RUNBOOK.md](suppliers/CNS/RUNBOOK.md) | ✅ in use (C24–C27) |
-| **HU** | – | HU 2026 ชน Price AKJ | `Claude` | `HU` | [suppliers/HU/README.md](suppliers/HU/README.md) | 🟡 runbook to write |
-| **NT** (Nantong) | Fabric | NT2026 ชน Price AKJ | `Price Check` | `XRBUYOR1` | [suppliers/NT/README.md](suppliers/NT/README.md) | 🟡 runbook to write |
+| Supplier | ERP code | What we buy | Google Sheet | Claude tab | History | Runbook | Status |
+|---|---|---|---|---|---|---|---|
+| **CNS** (Canasin) | ค.022 (+ old จ.006) | Towels, bath mats, bathrobes | CNS 2026 ชน Price AKJ | `Claud input` | `CNS_Old`, `XRBUYOR1` | [suppliers/CNS/RUNBOOK.md](suppliers/CNS/RUNBOOK.md) | ✅ in use (C24–C27) |
+| **HU** (Anhui Xiazhen) | อ.042 | Duvet inserts, pillows, toppers | HU 2026 ชน Price AKJ | `Claude` | `HU` | [suppliers/HU/README.md](suppliers/HU/README.md) | 🟡 runbook to write |
+| **NT** (Nantong Aomian) | น.008 | White fabric (KSN) | NT2026 ชน Price AKJ | `Price Check` | `XRBUYOR1` | [suppliers/NT/README.md](suppliers/NT/README.md) | 🟡 runbook to write |
+| **ZS** (Hebei Xiucheng) | ฮ.005 | White fabric (KSJ) | – | – | – | – | 🟡 not started |
+| **FX / FS** (Anhui Honren) | อ.085 (+ old อ.015) | Pillows, toppers | – | – | – | – | 🟡 not started |
+| **AMEY** (Jiangsu Amey) | A-001 | – | – | – | – | – | 🟡 not started |
+
+ERP codes and company names (from the ERP supplier register SUPPDET2): [common/SUPPLIERS.md](common/SUPPLIERS.md).
 
 ## How a run works (all suppliers)
 
@@ -33,6 +38,7 @@ Shared rules are in [common/CONVENTIONS.md](common/CONVENTIONS.md).
 ```
 CLAUDE.md               ← instructions Claude reads first
 common/CONVENTIONS.md   ← rules shared by every supplier
+common/SUPPLIERS.md     ← ERP supplier codes for all Chinese suppliers
 suppliers/CNS/RUNBOOK.md
 suppliers/HU/README.md
 suppliers/NT/README.md
