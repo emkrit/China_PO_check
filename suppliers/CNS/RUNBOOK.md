@@ -115,7 +115,7 @@ type = 1st word · loop = 2nd word · size = `W*H` · lb = number before `lbs` (
 ### 4.1 Rates (USD/lb, Repeat / New), from Rate_Card
 | Code | Repeat | New |
 |---|---|---|
-| RS-WH running stock white | 2.96 | – |
+| RS-WH running stock white (**only the 18 running-stock Product Codes**) | 2.96 | – |
 | DLP-WH double loop plain white | – | 3.05 |
 | DLJ-WH double loop jacquard white | 3.05 | 3.05 |
 | SLP-WH single loop plain white | 3.25 | 3.38 |
@@ -143,7 +143,7 @@ type = 1st word · loop = 2nd word · size = `W*H` · lb = number before `lbs` (
 2. **Jacquard bath mat** (box frames, welcome, dryhere, rhombus, etc.): DLJ-WH 3.05 / 3.05. Code `TW-BM-…-RS-WH`, because Price_List only has RS-WH for bath mats.
 3. **Colour.** Orange, darkgrey, darkbrown, black, brown, navy and royalblue count as **dark** (DLP-DK). Blue was treated as dark in C26 (not yet confirmed).
 4. **Colour jacquard** = colour rate + 0.15 USD/lb (dark jacquard 4.37 / 4.54). Code: plain `…-DLP-DK`.
-5. **White double loop plain**: Repeat = RS-WH 2.96, New = DLP-WH 3.05.
+5. **White double loop plain (not a running item)**: DLP-WH **3.05** for both Repeat and New. **2.96 (RS-WH) is only for the 18 running-stock Product Codes in rule 1** (Em, 26/11/26). Code `…-DLP-WH`, except bath mats, which keep `…-RS-WH` because Price_List has no other bath-mat code. A plain white bath mat that isn't a running item also uses 3.05.
 6. **White double loop jacquard**: DLJ-WH 3.05 / 3.05. **Single loop**: SLP-WH or SLJ-WH.
 7. **Embroidery**: towel price + Repeat embroidery add-on for both Repeat and New.
 8. **Bathrobe waffle 61×50 kimono** (a/rope or s/rope, no emb): BR-WAF-61x50, 9.03 / 9.50.
@@ -168,10 +168,10 @@ Always the **actual** lb from the product name, so `Z × AB ÷ 12` gives back th
 ### 4.6 Repeat/New (Y) and rate (Z)
 - Choose **New** if the PO price is strictly closer to Std New than to Std Repeat. Otherwise choose **Repeat**.
 - Z = the rate for that choice.
-- For white double loop plain, the code follows the choice: Repeat → `-RS-WH` (2.96), New → `-DLP-WH` (3.05).
+- White double loop plain that isn't a running item: always `-DLP-WH` 3.05 (Repeat and New are the same).
 
 ### 4.7 Cluade note (AE): write it in Thai, joined with ` · `
-- Method text, e.g. `คำนวณจาก USD/lb × lb/dz ÷ 12 · double loop plain white (Repeat = RS-WH 2.96, New = DLP-WH 3.05)`
+- Method text, e.g. `คำนวณจาก USD/lb × lb/dz ÷ 12 · double loop plain white: ไม่ใช่ running item → ใช้ DLP-WH 3.05 (2.96 ใช้ได้เฉพาะ running stock)`
 - Tags:
   - `[Running item] Product Code … อยู่ในตาราง running stock ของ supplier (… = x.xx USD/pc) → ใช้ราคาตารางเป็น Std, ไม่มีราคา New`
   - `[code ใกล้เคียง] ขนาดจริง <WxH-lbLB> ไม่มีใน price list → ใช้ <code size>`
