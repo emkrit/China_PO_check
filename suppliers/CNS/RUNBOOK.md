@@ -188,10 +188,10 @@ The inputs are J (PO price), Std Repeat (R), Std New (N), and V and W after the 
 1. If R exists and (|J−R| < 0.005, or N exists and |J−N| < 0.005), **or** V = `ราคาเท่ากับปีที่แล้ว` → `ราคาถูกต้อง`
 2. Else if R does not exist and W is blank → `PO ไหม่`
 3. Else if R does not exist → copy V's text (e.g. `ราคาลดลง 29.42%`)
-4. Else if J > R → `ราคาสูงกว่า Std Repeat +0.xx`, and add ` (ไม่เกิน New)` if N exists and J ≤ N
+4. Else if J > R and N exists and J ≤ N → `ราคาต่ำกว่า New spec` (Em, 26/11/26). Else if J > R → `ราคาสูงกว่า Std Repeat +0.xx`
 5. Else → `ราคาต่ำกว่า Std -0.xx`
 
-Conditional colours on U2:U1000 are already set (green correct · orange ไม่เกิน New · red สูงกว่า/เพิ่ม · yellow ต่ำกว่า/ลดลง · blue PO ไหม่). They are text-based, so they copy to other tabs.
+Conditional colours on U2:U1000 are already set (green correct · orange ราคาต่ำกว่า New spec · red สูงกว่า/เพิ่ม · yellow ต่ำกว่า/ลดลง · blue PO ไหม่). They are text-based, so they copy to other tabs.
 
 ---
 
